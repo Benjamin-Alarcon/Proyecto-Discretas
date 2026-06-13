@@ -24,7 +24,7 @@ grafo_ciudades = {
     "Rapid City": {"Denver": 636, "Miles City": 370},
     "Miles City": {"Rapid City": 370, "Boise": 1062}
 }
-
+"rico"
 
 #Creacion Ventana
 root = ctk.CTk()
