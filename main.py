@@ -36,3 +36,37 @@ root.title("Ruta óptima entre ciudades mediante grafos ponderas")
 
 #Bucle para mantener la ventana abierta
 root.mainloop()
+
+
+# grafico del video copiado
+
+def graficar_grafo(grafo):
+    G = nx.Digraph()
+
+    for nodo, vecino in grafo.item():
+        for vecino, peso in vecino.item():
+            G.add_edge(nodo, vecino, weight=peso)
+
+    pos = nx.string_layout(G)
+    plt.figure(figsize(8, 6))
+
+    nx.draw(
+        G,
+        pos,
+        with_labels=True,
+        node_size=700,
+        node_color="lightblue",
+        font_size=10
+        font_weight="bold"
+    )
+
+    edge_labels = {(u, v): G[u][v]['weight'] for u, v in G.edges()}
+    nx.draw_networkx_edge_labels(
+        G,
+        pos,
+        edge_labels=edge_labels,
+        font_size=10
+    )
+
+plt.title("Grafo con pesos")
+plt.show
