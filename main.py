@@ -55,6 +55,10 @@ def graficar_grafo(Grafo):
         edge_labels=edge_labels,
         font_size=10
     )
+    
+    plt.show()
+    
+    
 #Unidad medida en KM, Ciudades guardadas en una matriz(contiene ciudad proxima y km de distancia
 grafo_ciudades = {
     "Seattle": {"Portland": 282, "Boise": 794},
