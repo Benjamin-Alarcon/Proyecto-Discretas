@@ -28,6 +28,7 @@ grafo_ciudades = {
 }
 
 
+
 #Algoritmo para encontrar el camino con menor distancia
 def dijkstra(Grafo, salida,destino): # Se añade destino para detener el calulo de distancia 
     distancia, nodo_anterior = {}, {}
@@ -67,8 +68,8 @@ def graficar_grafo(Grafo,contenedor,ruta_optima = None):
         widget.destroy()
     G = nx.DiGraph()
 
-    for nodo, vecino in Grafo.items():
-        for vecino, peso in vecino.items():
+    for nodo, conexiones_nodo in Grafo.items():
+        for vecino, peso in conexiones_nodo.items():
             G.add_edge(nodo, vecino, weight=peso)
 
     pos = nx.spring_layout(G,seed=42)
@@ -81,7 +82,8 @@ def graficar_grafo(Grafo,contenedor,ruta_optima = None):
         node_size=700,
         node_color="lightblue",
         font_size=10,
-        font_weight="bold"
+        font_weight="bold",
+        ax=ax
     )
 
     edge_labels = {(u, v): G[u][v]['weight'] for u, v in G.edges()}
@@ -136,6 +138,9 @@ combo_destino.pack(pady=(0,15))
     
 lbl_resultado = ctk.CTkLabel(frame_botones,text="Distancia: -- KM",font=("Arial",14,"bold"),text_color="Blue")
 lbl_resultado.pack(pady=5)
+
+lbl_secuencia = ctk.CTkLabel(frame_botones,text="Recorrido = ---",font=("Arial",11),text_color="Black",wraplength=240)
+lbl_secuencia.pack(pady=(5,15))
     
 #Accion del boton
 def calcular_y_dibujar():
@@ -151,6 +156,9 @@ def calcular_y_dibujar():
     
     #actualizamos el texto
     lbl_resultado.configure(text=f"Distancia:{distancia} KM",text_color="green")
+    
+    lbl_secuencia.configure(text=f"Distancia:{distancia} KM", text_color= "green")
+    lbl_secuencia.configure(text=f"{'->'.join(ruta)}")
     
     # redibujamos el mapa 
     graficar_grafo(grafo_ciudades,frame_mapa,ruta_optima=ruta)
