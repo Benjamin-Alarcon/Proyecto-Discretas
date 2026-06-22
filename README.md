@@ -38,7 +38,6 @@ Sigue estos sencillos pasos para clonar el repositorio y ejecutar la aplicación
 Abre tu terminal o consola de comandos y ejecuta:
 
 git clone [https://github.com/Benjamin-Alarcon/Proyecto-Discretas]
-cd NOMBRE_DE_TU_REPOSITORIO
 
 ## 2. Instalar dependencias
 
