@@ -37,7 +37,7 @@ Sigue estos sencillos pasos para clonar el repositorio y ejecutar la aplicación
 ## 1. Clonar el repositorio
 Abre tu terminal o consola de comandos y ejecuta:
 
-git clone [https://github.com/TU_USUARIO_DE_GITHUB/NOMBRE_DE_TU_REPOSITORIO.git](https://github.com/TU_USUARIO_DE_GITHUB/NOMBRE_DE_TU_REPOSITORIO.git)
+git clone [https://github.com/Benjamin-Alarcon/Proyecto-Discretas]
 cd NOMBRE_DE_TU_REPOSITORIO
 
 ## 2. Instalar dependencias
