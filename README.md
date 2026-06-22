@@ -8,6 +8,7 @@ Proyecto final desarrollado para la asignatura de **Matemática Discreta** de la
 * Benjamín Alarcón
 * Benito Carbonell
 * Miguel Torres
+* Kevin Martin
 
 **Profesor:** Elliott Jamil Mardones Arias
 
